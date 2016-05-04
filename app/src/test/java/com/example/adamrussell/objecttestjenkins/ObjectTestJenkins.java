@@ -10,7 +10,8 @@ import org.junit.Before;
         import org.junit.runner.RunWith;
         import org.openqa.selenium.remote.DesiredCapabilities;
         import org.testobject.appium.common.TestObject;
-        import org.testobject.appium.junit.TestObjectAppiumSuite;
+import org.testobject.appium.common.TestObjectCapabilities;
+import org.testobject.appium.junit.TestObjectAppiumSuite;
         import org.testobject.appium.junit.TestObjectTestResultWatcher;
 
         import java.net.URL;
@@ -23,8 +24,8 @@ import org.junit.Before;
  */
 
 
-@TestObject(testObjectApiKey = "CF8C35E2E43C4A129DE76E95275299BD", testObjectSuiteId = 7)
-@RunWith(TestObjectAppiumSuite.class)
+//@TestObject(testObjectApiKey = "CF8C35E2E43C4A129DE76E95275299BD", testObjectSuiteId = 7)
+//@RunWith(TestObjectAppiumSuite.class)
 
 
 
@@ -43,11 +44,20 @@ public class ObjectTestJenkins {
     @Before
     public void setUp() throws Exception {
 
+
+        String apiKey = System.getenv("TESTOBJECT_API_KEY");
+        int appId = Integer.parseInt(System.getenv("TESTOBJECT_APP_ID"));
+        String deviceId = System.getenv("TESTOBJECT_DEVICE");
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        capabilities.setCapability("testobject_api_key", resultWatcher.getApiKey());
-        capabilities.setCapability("testobject_test_report_id", resultWatcher.getTestReportId());
-        capabilities.setCapability("testobject_device", "LG_Nexus_4_E960_real");
+      //  capabilities.setCapability("testobject_api_key", resultWatcher.getApiKey());
+      //  capabilities.setCapability("testobject_test_report_id", resultWatcher.getTestReportId());
+      //  capabilities.setCapability("testobject_device", "LG_Nexus_4_E960_real");
+        capabilities.setCapability(TestObjectCapabilities.TESTOBJECT_API_KEY, apiKey);
+        capabilities.setCapability(TestObjectCapabilities.TESTOBJECT_APP_ID, appId);
+        capabilities.setCapability(TestObjectCapabilities.TESTOBJECT_DEVICE, deviceId);
+
         capabilities.setCapability("automationName", "appium");
         capabilities.setCapability("app", ("/Users/adamrussell/Downloads/ChargeNow_v1.1.1.apk"));
         capabilities.setCapability("appPackage", "com.chargenow.client");
@@ -87,10 +97,10 @@ public class ObjectTestJenkins {
 
     {
         driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/dismiss_button\").text(\"Got it!\")").click();
-        driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/list_poi\")").click();
-        driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.ImageButton\")").click();
-        driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/right_toggle\")").click();
-        driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/login_button\").text(\"Login\")").click();
+     //   driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/list_poi\")").click();
+    //    driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.ImageButton\")").click();
+    //    driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/right_toggle\")").click();
+    //    driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/login_button\").text(\"Login\")").click();
 
 
     }
