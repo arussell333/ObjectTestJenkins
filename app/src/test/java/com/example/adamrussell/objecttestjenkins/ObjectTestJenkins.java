@@ -86,7 +86,7 @@ public class ObjectTestJenkins {
         driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/left_toggle\")").click();
         driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.TextView\").text(\"Filter Options\")").click();
         driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.ImageButton\")").click();
-        driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/left_toggle\")").click();
+        //driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/left_toggle\")").click();
 
 
     }
