@@ -99,8 +99,8 @@ public class ObjectTestJenkins {
         driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/dismiss_button\").text(\"Got it!\")").click();
         driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/list_poi\")").click();
         driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.ImageButton\")").click();
-        driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/right_toggle\")").click();
-        driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/login_button\").text(\"Login\")").click();
+       // driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/right_toggle\")").click();
+       // driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"com.chargenow.client:id/login_button\").text(\"Login\")").click();
 
 
     }
